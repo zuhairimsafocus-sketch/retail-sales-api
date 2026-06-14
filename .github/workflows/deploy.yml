@@ -30,6 +30,8 @@ jobs:
           aws s3 cp s3://retail-sales-models-zuhairi/sales_prediction_model_rf.pkl .
 
       - name: Run tests
+        env:
+          PYTHONPATH: .
         run: pytest test/ -v
 
   build-and-deploy:
